@@ -1,6 +1,10 @@
-def main():
-    print("Hello from uv-demo!")
+import pandas as pd
 
+scores = pd.DataFrame(
+    {
+        "section": ["A", "A", "B", "B"],
+        "score": [82, 94, 88, 92],
+    }
+)
 
-if __name__ == "__main__":
-    main()
+print(scores.groupby("section")["score"].mean())
